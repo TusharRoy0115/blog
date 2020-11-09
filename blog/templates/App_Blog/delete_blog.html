@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title_block %}
+{{blog.title}}
+{% endblock  %}
+
+{% block body_block %}
+<h4>Are you Sure You Want to Delete??</h4>
+<form method="POST">
+{% csrf_token %}
+<input type="submit" name="submit" value="submit" class="btn btn-danger btn-sm" >
+<a href="{% url 'App_Blog:my_blogs' %}" class="btn btn-info btn-sm">Cancel</a>
+</form>
+{% endblock  %}
